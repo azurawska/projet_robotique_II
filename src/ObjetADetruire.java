@@ -15,7 +15,7 @@ public class ObjetADetruire extends AbstractObject {
     }
 
     public void setTaille(int taille) {
-        this.taille = taille;
+        this.taille = this.taille - taille;
     }
 
     @Override
@@ -42,5 +42,18 @@ public class ObjetADetruire extends AbstractObject {
         return "ObjetADetruire{" +
                 "taille=" + taille +
                 '}';
+    }
+
+    public boolean estDetruit() {
+        if(this.getTaille()==0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void objetDetruit() {
+        System.out.println("Vous avez réussi à détruire A !");
     }
 }

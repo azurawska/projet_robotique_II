@@ -15,7 +15,7 @@ public class Robot extends AbstractObject {
     }
 
     public void setNbPointsVie(int nbPointsVie) {
-        this.nbPointsVie = nbPointsVie;
+        this.nbPointsVie = this.nbPointsVie - nbPointsVie;
     }
 
     @Override
@@ -42,5 +42,35 @@ public class Robot extends AbstractObject {
         return "Robot{" +
                 "nbPointsVie=" + nbPointsVie +
                 '}';
+    }
+
+    public boolean estMort() {
+        if(nbPointsVie==0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void robotDetruit() {
+        System.out.println("Le robot situé à la position (" + this.getPosition().getLettre()+this.getPosition().getNum() + ") est mort.");
+    }
+
+    public void communiquerMessage(Robot robot, String message) {
+
+    }
+
+    public void deplacement(Case position) {
+        this.setPosition(position);
+    }
+
+    public boolean ilYACollision(Case position) {
+        if(this.getPosition().equals(position) && position.isOccupe()==true) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
