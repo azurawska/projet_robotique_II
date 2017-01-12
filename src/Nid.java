@@ -12,6 +12,11 @@ public class Nid extends AbstractObject {
         super(position);
         this.nbRobots = nbRobots;
         this.robots=new Robot[this.nbRobots];
+
+        for(int i=0;i<this.robots.length;i++) {
+            int nbPointsVieRobot= (int) ((Math.random())*100)+1;
+            this.robots[i]=new Robot(this.getPosition(), nbPointsVieRobot);
+        }
     }
 
     public Robot[] getRobots() {

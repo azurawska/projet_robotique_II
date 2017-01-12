@@ -12,13 +12,8 @@ public class Case {
     public Case(char lettre, int num, AbstractObject abstractObject) {
         this.lettre = lettre;
         this.num = num;
-        if(abstractObject.equals(null)) {
-            this.occupe=false;
-        }
-        else {
-            this.abstractObject=abstractObject;
-            this.occupe=true;
-        }
+        this.abstractObject=abstractObject;
+        this.occupe=false;
     }
 
     public char getLettre() {
