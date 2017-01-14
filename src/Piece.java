@@ -233,6 +233,7 @@ public class Piece {
                     }
                 }
             }
+
         for(int l=0;l<cases.length;l++) {
             if(l==caseNid) {
                 cases[l].setAbstractObject(new Nid(cases[l], nbRobots));
@@ -243,6 +244,26 @@ public class Piece {
                 cases[l].setOccupe(true);
             }
         }
+
+        Nid nid=null;
+        ObjetADetruire objetADetruire=null;
+
+        for(int l=0;l<cases.length;l++) {
+            if(cases[l].getAbstractObject() instanceof Nid) {
+                nid= (Nid) cases[l].getAbstractObject();
+            }
+            if(cases[l].getAbstractObject() instanceof ObjetADetruire) {
+                objetADetruire= (ObjetADetruire) cases[l].getAbstractObject();
+            }
+        }
+
+        while(!objetADetruire.estDetruit() || !(nid.getRobots().length==0)) {
+
+            for(int l=0;l<nid.getRobots().length;l++) {
+                nid.getRobots()[l].deplacement();
+            }
+        }
+        System.out.println("Jeu terminé.");
     }
 
     public Case[] getCases() {

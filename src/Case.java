@@ -16,6 +16,12 @@ public class Case {
         this.occupe=false;
     }
 
+    public Case(char lettre, int num, boolean occupe) {
+        this.lettre=lettre;
+        this.num=num;
+        this.occupe=occupe;
+    }
+
     public char getLettre() {
         return lettre;
     }
@@ -79,5 +85,39 @@ public class Case {
                 ", occupe=" + occupe +
                 ", abstractObject=" + abstractObject +
                 '}';
+    }
+
+    public int retournerNumeroLettre(char lettre) {
+
+        if(lettre=='A') {
+            return 0;
+        }
+        else if(lettre=='B') {
+            return 1;
+        }
+        else if(lettre=='C') {
+            return 2;
+        }
+        else if(lettre=='D') {
+            return 3;
+        }
+        else if(lettre=='E') {
+            return 4;
+        }
+        else if(lettre=='F') {
+            return 5;
+        }
+        else if(lettre=='G') {
+            return 6;
+        }
+        else if(lettre=='H') {
+            return 7;
+        }
+        else if(lettre=='I') {
+            return 8;
+        }
+        else {
+            return 9;
+        }
     }
 }
